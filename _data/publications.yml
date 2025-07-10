@@ -1,0 +1,74 @@
+- id: "SPS"
+  title: "Single-Pass Document Scanning for Question Answering"
+  authors:
+    - name: "Weili Cao*"
+      is_self: false
+    - name: "Jianyou Wang*"
+      is_self: false
+    - name: "Youze Zheng"
+      is_self: true
+    - name: "Longtian Bao"
+      is_self: false
+    - name: "Qirui Zheng"
+      is_self: false
+    - name: "Taylor Berg-Kirkpatrick"
+      is_self: false
+    - name: "Ramamohan Paturi"
+      is_self: false
+    - name: "Leon Bergen"
+      is_self: false
+  venue: "Preprint, 2025"
+  links:
+    - name: "Paper"
+      url: "https://arxiv.org/abs/2504.03101"
+    - name: "Code"
+      url: "https://github.com/MambaRetriever/MambaRetriever"
+  tldr: "We trained State Space Models (Mamba-2) for long-context Q&A, achieving performance comparable to GPT-4o on extremely long documents while being more computationally efficient."
+  citation: "@misc{cao2025singlepassdocumentscanningquestion,
+      title={Single-Pass Document Scanning for Question Answering}, 
+      author={Weili Cao and Jianyou Wang and Youze Zheng and Longtian Bao and Qirui Zheng and Taylor Berg-Kirkpatrick and Ramamohan Paturi and Leon Bergen},
+      year={2025},
+      eprint={2504.03101},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2504.03101}, 
+}"
+
+
+- id: "RoBBR"
+  title: "Measuring Risk of Bias in Biomedical Reports: The RoBBR Benchmark"
+  authors:
+    - name: "Jianyou Wang*"
+      is_self: false
+    - name: "Weili Cao*"
+      is_self: false
+    - name: "Longtian Bao"
+      is_self: false
+    - name: "Youze Zheng"
+      is_self: true
+    - name: "Gil Pasternak"
+      is_self: false
+    - name: "Kaicheng Wang"
+      is_self: false
+    - name: "Xiaoyue Wang"
+      is_self: false
+    - name: "Ramamohan Paturi"
+      is_self: false
+    - name: "Leon Bergen"
+      is_self: false
+  venue: "arXiv Preprint, 2024"
+  links:
+    - name: "Paper"
+      url: "https://arxiv.org/abs/2411.18831"
+    - name: "Code"
+      url: "https://github.com/RoBBR-Benchmark/RoBBR"
+  tldr: "A benchmark for assessing biases and limitations in the methodology of biomedical studies."
+  citation: "@misc{wang2024measuringriskbiasbiomedical,
+      title={Measuring Risk of Bias in Biomedical Reports: The RoBBR Benchmark}, 
+      author={Jianyou Wang and Weili Cao and Longtian Bao and Youze Zheng and Gil Pasternak and Kaicheng Wang and Xiaoyue Wang and Ramamohan Paturi and Leon Bergen},
+      year={2024},
+      eprint={2411.18831},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2411.18831}, 
+}"

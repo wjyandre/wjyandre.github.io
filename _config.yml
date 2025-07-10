@@ -1,0 +1,36 @@
+# Site settings
+title: Youze (Hargen) Zheng
+email: hgzheng@ucsd.edu
+description: >
+  Youze (Hargen) Zheng's personal academic website, focusing on NLP, ML, and biomedical applications.
+baseurl: ""
+url: "https://hgnzheng.github.io"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github
+  - README.md
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name
+
+# Default front matter
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default" 

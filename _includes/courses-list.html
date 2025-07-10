@@ -1,0 +1,12 @@
+<h2>UC San Diego</h2>
+<ul>
+  {% for course in site.data.courses %}
+    <li> <b> {{ course.role }} ({{ course.term }}) </b> 
+      {% if course.url and course.url != "#" and course.url != "" and course.url != null %}
+        <a href="{{ course.url }}">{{ course.title }}</a>
+      {% else %}
+        {{ course.title }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul> 

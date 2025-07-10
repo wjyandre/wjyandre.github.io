@@ -1,0 +1,24 @@
+- role: "Tutor"
+  term: "Spring 2025"
+  title: "CSE 151A: Introduction to Machine Learning"
+  url: null
+
+- role: "Tutor"
+  term: "Winter 2025"
+  title: "CSE 151B: Deep Learning"
+  url: null
+
+- role: "Grader"
+  term: "Fall 2024"
+  title: "LIGN 167: Deep Learning for Natural Language Understanding"
+  url: null
+
+- role: "Tutor"
+  term: "Fall 2024"
+  title: "DSC 10: Principles of Data Science"
+  url: "https://dsc10.com/"
+
+- role: "Tutor"
+  term: "Fall 2023, Winter, Spring, Summer 2024"
+  title: "DSC 20: Programming and Basic Data Structures for Data Science"
+  url: "https://dsc20.org/" 

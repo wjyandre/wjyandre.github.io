@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% if page.title %}{{ page.title }}{% else %}Youze (Hargen) Zheng | UC San Diego{% endif %}</title>
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Youze (Hargen) Zheng is an undergraduate student at UC San Diego studying Data Science and Mathematics-Computer Science.{% endif %}">
+        
+        <!-- Open Graph / Social Media Meta Tags -->
+        <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Youze (Hargen) Zheng | UC San Diego{% endif %}">
+        <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Youze (Hargen) Zheng is an undergraduate student at UC San Diego studying Data Science and Mathematics-Computer Science.{% endif %}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://hgnzheng.github.io/{% if page.url != '/' %}{{ page.url }}{% endif %}">
+        
+        <link rel="stylesheet" href="/style.css">
+        <link rel="icon" href="/assets/images/favicon-96x96.png" type="image/png">
+        {% if page.custom_js %}
+        <script src="{{ page.custom_js }}"></script>
+        {% endif %}
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <img src="/assets/images/profile.png" alt="Youze (Hargen) Zheng" class="profile-image">
+                <div class="header-text">
+                    <h1>Youze "Hargen" Zheng<sup><span class="pronunciation-link" onclick="document.getElementById('name-pronunciation').play();" title="Listen to name pronunciation" style="font-size: 0.6em; color: #888; cursor: pointer; margin-left: 3px; font-weight: normal;">[pron.]</span></sup>
+                    <audio id="name-pronunciation" src="/assets/pronunciation/Chinese_ pronunciation.m4a" preload="none" style="display:none;"></audio></h1>
+                    <p class="header-title">
+                        Undergrad, UC San Diego<br>
+                        Data Science and Mathematics-Computer Science<br>
+                        Email: hgzheng [at] ucsd [dot] edu
+                    </p>
+                </div>
+            </div>
+            
+            <div class="contact-header">
+                <a href="https://scholar.google.com/citations?user=jmWrTQcAAAAJ&hl=en">Scholar</a>
+                <a href="https://www.linkedin.com/in/hgznnn/">LinkedIn</a>
+                <a href="https://github.com/hgnzheng">GitHub</a>
+                <a href="/assets/cv.pdf">CV</a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+                    <li><a href="/research.html" {% if page.url == '/research.html' %}class="active"{% endif %}>Research</a></li>
+                    <li><a href="/teaching.html" {% if page.url == '/teaching.html' %}class="active"{% endif %}>Teaching</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        {{ content }}
+        
+        <footer></footer>
+        
+        <script src="/script.js"></script>
+        <script src="/assets/js/scripts.js"></script>
+    </body>
+</html> 

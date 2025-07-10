@@ -1,0 +1,23 @@
+<h2>Publications</h2>
+{% for publication in site.data.publications %}
+<div class="paper" id="{{ publication.id }}">
+    <div class="paper-title">{{ publication.title }}</div>
+    <div class="paper-authors">
+        {% for author in publication.authors %}
+        {% if author.is_self %}<span class="author">{{ author.name }}</span>{% else %}{{ author.name }}{% endif %}{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
+    </div>
+    <div class="paper-venue">{{ publication.venue }}</div>
+    <div class="paper-links">
+        <a onclick="toggleElement('{{ publication.id }}', 'tldr')">TL;DR</a>
+        {% for link in publication.links %}
+        <a href="{{ link.url }}">{{ link.name }}</a>
+        {% endfor %}
+        <a onclick="toggleElement('{{ publication.id }}', 'citation')">Citation</a>
+    </div>
+    <div class="paper-tldr">
+        <strong>TL;DR:</strong> {{ publication.tldr }}
+    </div>
+    <div class="paper-citation"><pre><code>{{ publication.citation }}</code></pre></div>
+</div>
+{% endfor %} 

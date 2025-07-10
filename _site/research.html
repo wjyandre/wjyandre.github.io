@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Youze (Hargen) Zheng - Research</title>
+        <meta name="description" content="Research work and publications by Youze (Hargen) Zheng">
+        
+        <!-- Open Graph / Social Media Meta Tags -->
+        <meta property="og:title" content="Youze (Hargen) Zheng - Research">
+        <meta property="og:description" content="Research work and publications by Youze (Hargen) Zheng">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://hgnzheng.github.io//research.html">
+        
+        <link rel="stylesheet" href="/style.css">
+        <link rel="icon" href="/assets/images/favicon-96x96.png" type="image/png">
+        
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <img src="/assets/images/profile.png" alt="Youze (Hargen) Zheng" class="profile-image">
+                <div class="header-text">
+                    <h1>Youze "Hargen" Zheng<sup><span class="pronunciation-link" onclick="document.getElementById('name-pronunciation').play();" title="Listen to name pronunciation" style="font-size: 0.6em; color: #888; cursor: pointer; margin-left: 3px; font-weight: normal;">[pron.]</span></sup>
+                    <audio id="name-pronunciation" src="/assets/pronunciation/Chinese_ pronunciation.m4a" preload="none" style="display:none;"></audio></h1>
+                    <p class="header-title">
+                        Undergrad, UC San Diego<br>
+                        Data Science and Mathematics-Computer Science<br>
+                        Email: hgzheng [at] ucsd [dot] edu
+                    </p>
+                </div>
+            </div>
+            
+            <div class="contact-header">
+                <a href="https://scholar.google.com/citations?user=jmWrTQcAAAAJ&hl=en">Scholar</a>
+                <a href="https://www.linkedin.com/in/hgznnn/">LinkedIn</a>
+                <a href="https://github.com/hgnzheng">GitHub</a>
+                <a href="/assets/cv.pdf">CV</a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/research.html" class="active">Research</a></li>
+                    <li><a href="/teaching.html" >Teaching</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+  <section class="research-intro blurb">
+    <p>
+      My previous research involved evaluating LLMs' performance on aggregating information from biomedical reports.<br>
+      I also worked on a project that trained a state space model (Mamba-2 130M & 1.3B) to efficiently retrieve information from long documents for question answering tasks.
+    </p>
+    <!-- <p>
+      My research focuses on developing efficient methods for natural language processing, 
+      with particular interests in:
+    </p>
+    <ul>
+      <li>State space models for long-context processing</li>
+      <li>Retrieval-augmented language models</li>
+      <li>NLP for biomedical applications</li>
+      <li>Evaluation benchmarks for language models</li>
+    </ul> -->
+  </section>
+
+  <section class="publications">
+    <div class="publications-container">
+      <h2>Publications</h2>
+
+<div class="paper" id="SPS">
+    <div class="paper-title">Single-Pass Document Scanning for Question Answering</div>
+    <div class="paper-authors">
+        
+        Weili Cao*, 
+        
+        Jianyou Wang*, 
+        
+        <span class="author">Youze Zheng</span>, 
+        
+        Longtian Bao, 
+        
+        Qirui Zheng, 
+        
+        Taylor Berg-Kirkpatrick, 
+        
+        Ramamohan Paturi, 
+        
+        Leon Bergen
+        
+    </div>
+    <div class="paper-venue">Preprint, 2025</div>
+    <div class="paper-links">
+        <a onclick="toggleElement('SPS', 'tldr')">TL;DR</a>
+        
+        <a href="https://arxiv.org/abs/2504.03101">Paper</a>
+        
+        <a href="https://github.com/MambaRetriever/MambaRetriever">Code</a>
+        
+        <a onclick="toggleElement('SPS', 'citation')">Citation</a>
+    </div>
+    <div class="paper-tldr">
+        <strong>TL;DR:</strong> We trained State Space Models (Mamba-2) for long-context Q&A, achieving performance comparable to GPT-4o on extremely long documents while being more computationally efficient.
+    </div>
+    <div class="paper-citation"><pre><code>@misc{cao2025singlepassdocumentscanningquestion, title={Single-Pass Document Scanning for Question Answering}, author={Weili Cao and Jianyou Wang and Youze Zheng and Longtian Bao and Qirui Zheng and Taylor Berg-Kirkpatrick and Ramamohan Paturi and Leon Bergen}, year={2025}, eprint={2504.03101}, archivePrefix={arXiv}, primaryClass={cs.CL}, url={https://arxiv.org/abs/2504.03101}, }</code></pre></div>
+</div>
+
+<div class="paper" id="RoBBR">
+    <div class="paper-title">Measuring Risk of Bias in Biomedical Reports: The RoBBR Benchmark</div>
+    <div class="paper-authors">
+        
+        Jianyou Wang*, 
+        
+        Weili Cao*, 
+        
+        Longtian Bao, 
+        
+        <span class="author">Youze Zheng</span>, 
+        
+        Gil Pasternak, 
+        
+        Kaicheng Wang, 
+        
+        Xiaoyue Wang, 
+        
+        Ramamohan Paturi, 
+        
+        Leon Bergen
+        
+    </div>
+    <div class="paper-venue">arXiv Preprint, 2024</div>
+    <div class="paper-links">
+        <a onclick="toggleElement('RoBBR', 'tldr')">TL;DR</a>
+        
+        <a href="https://arxiv.org/abs/2411.18831">Paper</a>
+        
+        <a href="https://github.com/RoBBR-Benchmark/RoBBR">Code</a>
+        
+        <a onclick="toggleElement('RoBBR', 'citation')">Citation</a>
+    </div>
+    <div class="paper-tldr">
+        <strong>TL;DR:</strong> A benchmark for assessing biases and limitations in the methodology of biomedical studies.
+    </div>
+    <div class="paper-citation"><pre><code>@misc{wang2024measuringriskbiasbiomedical, title={Measuring Risk of Bias in Biomedical Reports: The RoBBR Benchmark}, author={Jianyou Wang and Weili Cao and Longtian Bao and Youze Zheng and Gil Pasternak and Kaicheng Wang and Xiaoyue Wang and Ramamohan Paturi and Leon Bergen}, year={2024}, eprint={2411.18831}, archivePrefix={arXiv}, primaryClass={cs.CL}, url={https://arxiv.org/abs/2411.18831}, }</code></pre></div>
+</div>
+ 
+    </div>
+  </section>
+</main>
+
+        
+        <footer></footer>
+        
+        <script src="/script.js"></script>
+        <script src="/assets/js/scripts.js"></script>
+    </body>
+</html> 

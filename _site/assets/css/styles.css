@@ -1,0 +1,218 @@
+/* Base styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 1rem;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.profile-title {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  color: #586069;
+}
+
+.profile-links {
+  margin-top: 0.5rem;
+}
+
+.profile-links a {
+  margin-right: 1rem;
+}
+
+/* Navigation */
+nav {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* News section */
+.news-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.news-item {
+  margin-bottom: 1rem;
+}
+
+.news-date {
+  font-weight: 600;
+  color: #586069;
+}
+
+/* Publications section */
+.paper {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaecef;
+}
+
+.paper-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.paper-authors {
+  margin-bottom: 0.5rem;
+}
+
+.author {
+  font-weight: 600;
+}
+
+.paper-venue {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.paper-links {
+  margin-bottom: 1rem;
+}
+
+.paper-links a {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.paper-tldr, .paper-citation {
+  background-color: #f6f8fa;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+/* Courses section */
+.courses-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.courses-list li {
+  margin-bottom: 1rem;
+}
+
+.course-role {
+  font-weight: 600;
+}
+
+.course-term {
+  font-style: italic;
+}
+
+/* Teaching list (Rishi style) */
+.teaching-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.teaching-list li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.teaching-list li b {
+  font-weight: 600;
+}
+
+.teaching-list li a {
+  color: #0366d6;
+}
+
+.teaching-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eaecef;
+  text-align: center;
+  color: #586069;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+} 

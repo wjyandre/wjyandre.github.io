@@ -1,0 +1,868 @@
+/* Academic Website */
+
+:root {
+  --primary-color: #8C1515; /* cardinal red */
+  --accent-color: #8C1515; /* cardinal red */
+  --text-primary: #000000; /* Pure black for main text */
+  --text-secondary: #111111; /* Very dark gray, almost black */
+  --text-tertiary: #222222; /* Dark gray for less emphasized text */
+  --bg-color: #ffffff;
+  --bg-secondary: #f4f4f4;
+  --border-light: #e0e0e0;
+  --link-color: #8C1515; /* cardinal red for links */
+  --link-hover: #000080; /* Navy blue for hover */
+  
+  /* Typography - Palatino serif font from Rishi's site */
+  --font-main: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 40px;
+  --space-xl: 60px;
+  --space-xxl: 80px;
+  
+  /* Layout */
+  --container-width: 950px;
+  
+  --header-height: 60px;
+  --transition-main: all 0.3s ease;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main) !important;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 60px auto;
+  width: 92%;
+  max-width: var(--container-width);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-main);
+  font-size: 18px;
+  padding: 20px 0 40px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 var(--space-md) 0;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  border-bottom: none; /* Remove border below h1 */
+  padding-bottom: 8px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: var(--space-xs);
+  border-bottom: none; /* Remove border below h2 */
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+/* Header & Navigation */
+header {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+header h1 {
+  border-bottom: none;
+  margin-bottom: 12px;
+  padding-bottom: 0;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.header-title {
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.email {
+  color: var(--link-color);
+  border-bottom: 1px solid transparent;
+}
+
+.email:hover {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.contact-header {
+  position: absolute;
+  top: 0;
+  right: calc((100% - var(--container-width)) / 2 + 15px);
+  text-align: right;
+}
+
+.contact-header a {
+  margin-left: 16px;
+  transition: all 0.2s;
+}
+
+.contact-header a:hover {
+  color: var(--link-hover);
+  transform: translateY(-2px);
+}
+
+nav {
+  margin-top: 20px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
+  font-size: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 30px;
+  color: var(--text-primary);
+}
+
+nav a {
+  color: var(--text-secondary);
+  position: relative;
+  padding-bottom: 4px;
+  font-weight: 700;
+  border-bottom: none;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+nav a.active {
+  color: var(--primary-color);
+}
+
+/* Add a subtle underline effect for active nav items */
+nav a.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0.7);
+  transition: transform 0.3s ease;
+}
+
+nav a.active:hover::after {
+  transform: scaleX(1);
+}
+
+/* Blurb Sections */
+.blurb {
+  margin-bottom: 40px;
+}
+
+.blurb h1 {
+  margin-top: 0;
+}
+
+.blurb p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+/* Fix bullet styling for all pages */
+.blurb ul, .interests ul, .news-list, ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 25px;
+}
+
+.blurb ul li, .interests ul li, .news-list li, ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* News Section */
+.news-list {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.news-list li {
+  font-size: 18px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  position: relative;
+  padding-left: 0;
+}
+
+.news-list li::before {
+  content: none;
+}
+
+.news-list li strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Research Projects - Stanford-style */
+.research-projects {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Improved Research page styling */
+.interests ul {
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+.interests ul li {
+  margin-bottom: 15px;
+}
+
+.interests ul li strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Publication styling - inspired by Eric Wallace's site */
+.publications-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+/* Reduce the space between research intro and publications */
+.research-intro {
+  margin-bottom: 0;
+}
+
+.publications {
+  margin-top: 0;
+}
+
+/* Preserve spacing for news section */
+.intro {
+  margin-bottom: 40px;
+}
+
+.paper {
+  margin-bottom: 0;
+  padding: 14px 20px;
+  position: relative;
+  border-radius: 0;
+  transition: all 0.2s ease;
+  border: none;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.paper:hover {
+  background-color: rgba(250, 250, 250, 0.3);
+  border-color: #eee;
+  transform: none;
+  box-shadow: none;
+}
+
+.paper-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.paper-authors {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.paper-venue {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-tertiary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.paper-links {
+  font-size: 15px;
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.paper-links a:not(:last-child) {
+  margin-right: 8px;
+  padding-right: 10px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.paper-links a {
+  display: inline-flex;
+  padding: 2px 0;
+  background-color: transparent;
+  color: var(--link-color);
+  border-radius: 0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  border-bottom: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper-links a:hover {
+  color: var(--primary-color);
+  transform: none;
+  text-decoration: underline;
+}
+
+/* Remove all the previous after pseudo-elements */
+.paper-links a:after,
+.paper-links a:hover:after {
+  content: none;
+}
+
+.paper-tldr {
+  background-color: transparent;
+  padding: 12px 0;
+  border-radius: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  display: none;
+  animation: fadeIn 0.3s ease;
+  border-left: 3px solid var(--primary-color);
+  padding-left: 12px;
+}
+
+.paper-tldr strong {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.paper-citation {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  line-height: 1.45;
+  display: none;
+  animation: fadeIn 0.3s ease;
+  overflow-x: auto;
+  color: #24292e;
+  max-height: 300px;
+  max-width: 100%;
+  word-break: normal;
+  word-wrap: break-word;
+}
+
+.paper-citation pre {
+  margin: 0;
+  max-width: 100%;
+}
+
+.paper-citation code {
+  display: block;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.show-citation .paper-citation,
+.show-tldr .paper-tldr {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.author {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Regular bullet lists for teaching page */
+ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 25px;
+}
+
+ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+ul li b {
+  font-weight: 700;
+}
+
+ul li a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+  border-bottom: none;
+}
+
+/* Simplified Teaching Section styling (like Rishi's site) */
+.teaching-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.teaching-list li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.teaching-list li b {
+  font-weight: 700;
+}
+
+.teaching-list li a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.teaching-list li a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  padding: var(--space-xl) 0;
+  border-top: none;
+  margin-top: var(--space-xxl);
+}
+
+footer p {
+  color: var(--text-tertiary);
+  font-size: 14px;
+}
+
+/* Content highlight effect */
+::selection {
+  background-color: rgba(140, 21, 21, 0.2);
+  color: var(--text-primary);
+}
+
+/* We're moving contact links to the header so this is now being removed */
+.contact-links {
+  display: none;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  nav, footer, .contact-header {
+    display: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  
+  .pub-links {
+    display: none;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  body {
+    width: 95%;
+    padding: 0 var(--space-md);
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+  }
+  
+  .contact-header {
+    position: static;
+    text-align: left;
+    margin-bottom: var(--space-md);
+  }
+  
+  .contact-header a {
+    margin: 0 16px 0 0;
+  }
+  
+  .paper {
+    padding: 14px 16px;
+  }
+  
+  .paper-links {
+    gap: 6px;
+  }
+  
+  .paper-links a {
+    padding: 2px 0;
+    font-size: 15px;
+  }
+  
+  .paper-links a:not(:last-child) {
+    margin-right: 6px;
+    padding-right: 6px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Make sure section headings have proper styling on all screen sizes */
+  .publications h2:after, .research-intro h2:after, .teaching h2:after, 
+  .news h2:after, .intro h2:after, .blurb h2:after, section h2:after {
+    width: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    width: 95%;
+    margin: 30px auto;
+    padding: 0 16px;
+    font-size: 16px;
+  }
+  
+  header h1 {
+    font-size: 32px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+  
+  h2 {
+    font-size: 22px;
+  }
+  
+  h3 {
+    font-size: 19px;
+  }
+  
+  .header-title {
+    font-size: 16px;
+  }
+  
+  nav ul {
+    gap: 16px;
+    font-size: 18px;
+  }
+  
+  nav ul li {
+    margin-right: var(--space-md);
+    font-size: 20px;
+  }
+  
+  p, .blurb p, .paper-authors, .paper-venue, .paper-links, .paper-tldr {
+    font-size: 16px;
+  }
+  
+  .blurb ul li, .interests ul li, .news-list li, ul li {
+    font-size: 16px;
+  }
+  
+  .paper {
+    padding: 12px;
+  }
+  
+  /* Adjust section heading styles for smaller screens */
+  .publications h2, .research-intro h2, .teaching h2, .news h2, 
+  .intro h2, .blurb h2, section h2 {
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+  }
+  
+  .publications h2:after, .research-intro h2:after, .teaching h2:after, 
+  .news h2:after, .intro h2:after, .blurb h2:after, section h2:after {
+    width: 30px;
+    height: 2px;
+  }
+  
+  .paper-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  
+  .paper-links a {
+    padding: 2px 0;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .paper-links a:not(:last-child) {
+    margin-right: 5px;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .paper-tldr, .paper-citation {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .paper-citation pre {
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .paper-citation code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 16px;
+    font-size: 17px;
+  }
+  
+  header h1 {
+    font-size: 32px;
+  }
+  
+  .contact-header {
+    position: relative;
+    top: 0;
+    right: 0;
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  
+  .contact-header a {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+  
+  nav ul {
+    gap: 16px;
+    font-size: 20px;
+  }
+  
+  h1 {
+    font-size: 26px;
+  }
+  
+  h2 {
+    font-size: 22px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  .paper-title {
+    font-size: 19px;
+  }
+  
+  .profile-image {
+    float: none;
+    display: block;
+    margin: 0 auto 20px;
+    width: 180px;
+  }
+}
+
+p, .paper-title, .blurb p {
+  color: var(--text-primary);
+}
+
+.profile-image {
+  width: 140px;
+  height: 128px;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: top;
+  margin-right: 30px;
+  margin-bottom: 0;
+  border: none;
+  box-shadow: none;
+  align-self: flex-start;
+}
+
+.header-content {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 15px;
+}
+
+.header-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 0;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .header-text {
+    width: 100%;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin-top: 15px;
+  }
+}
+
+/* Add a new section for the publications container */
+.publications {
+  margin-top: 0;
+}
+
+.publications h2 {
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.publications h2:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: 0;
+}
+
+/* Apply styled headings to all sections */
+.publications h2, .research-intro h2, .teaching h2, .news h2, 
+.intro h2, .blurb h2, section h2 {
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.publications h2:after, .research-intro h2:after, .teaching h2:after, 
+.news h2:after, .intro h2:after, .blurb h2:after, section h2:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: 0;
+}
+
+/* Ensure the last paragraph in research intro has no margin */
+.research-intro p:last-child {
+  margin-bottom: 0;
+}
