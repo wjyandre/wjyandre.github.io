@@ -4,9 +4,9 @@
     - name: "Weili Cao*"
       is_self: false
     - name: "Jianyou Wang*"
-      is_self: false
-    - name: "Youze Zheng"
       is_self: true
+    - name: "Youze Zheng"
+      is_self: false
     - name: "Longtian Bao"
       is_self: false
     - name: "Qirui Zheng"
@@ -39,13 +39,13 @@
   title: "Measuring Risk of Bias in Biomedical Reports: The RoBBR Benchmark"
   authors:
     - name: "Jianyou Wang*"
-      is_self: false
+      is_self: true
     - name: "Weili Cao*"
       is_self: false
     - name: "Longtian Bao"
       is_self: false
     - name: "Youze Zheng"
-      is_self: true
+      is_self: false
     - name: "Gil Pasternak"
       is_self: false
     - name: "Kaicheng Wang"

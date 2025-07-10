@@ -780,7 +780,7 @@ p, .paper-title, .blurb p {
 
 .profile-image {
   width: 140px;
-  height: 128px;
+  height: 200px;
   border-radius: 4px;
   object-fit: cover;
   object-position: top;
