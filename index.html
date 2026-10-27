@@ -21,7 +21,6 @@
     "alternateName": ["Jianyou Wang", "Andre Wang"],
     "url": "https://wjyandre.github.io/",
     "image": "https://wjyandre.github.io/assets/photo.jpg",
-    "email": "mailto:jiw101@ucsd.edu",
     "jobTitle": "Ph.D. Candidate, Computer Science and Engineering",
     "affiliation": {"@type": "CollegeOrUniversity", "name": "University of California, San Diego"},
     "alumniOf": [
@@ -58,7 +57,11 @@
       <h1>Andre (Jianyou) Wang</h1>
       <p class="role">Ph.D. Candidate, Computer Science &amp; Engineering<br>University of California, San Diego</p>
       <div class="links">
-        <a href="mailto:jiw101@ucsd.edu">jiw101@ucsd.edu</a>
+        <!-- Email is an image so scrapers can't read it. Regenerate both PNGs if the address changes. -->
+        <picture class="email">
+          <source srcset="assets/email-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="assets/email-light.png" width="123" height="18" alt="Email address (shown as image)">
+        </picture>
         <a href="https://scholar.google.com/citations?user=4nysj5kAAAAJ&amp;hl=en">Google Scholar</a>
         <a href="assets/Jianyou_Wang_CV.pdf">CV (PDF)</a>
       </div>
