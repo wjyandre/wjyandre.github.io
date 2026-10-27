@@ -1,26 +1,105 @@
----
-layout: default
-title: Hello world - Home
-description: Hello world personal academic website
----
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andre (Jianyou) Wang</title>
+  <meta name="description" content="Andre (Jianyou) Wang — Ph.D. candidate at UC San Diego working on LLM reasoning, post-training, and real-world forecasting.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
 
-<main>
-    <section class="intro">
-    <p>
-        I am a 4th year CSE PhD student at UC San Diego, advised by <a href="https://linguistics.ucsd.edu/people/faculty/profiles/leon-bergen.html">Dr. Leon Bergen</a> and
-        <a href="https://cseweb.ucsd.edu/~paturi/">Dr. Ramamohan Paturi</a>. I am a student founding member of the <a href="https://lei.ucsd.edu/">Laboratory for Emerging Intelligence</a>. I also received my CSE master degree from UC San Diego. Previously, I attended Duke University with a triple major in mathematics, statistics and computer science, advised by <a href="https://people.duke.edu/~vt45/">Dr. Vahid Tarokh</a> and
-        <a href="https://users.cs.duke.edu/~cynthia/">Dr. Cynthia Rudin</a>. I graduated with the highest distinction from Duke's math department. 
-    </p>
-    <p>
-        My primary interest is in language modeling. Currently, my work spans these areas: AI Scientist; Agentic Framework; Instruction-Following Information Retrieval; Long-Context
-Modeling; Benchmarking; Scientific Document Processing; Synthetic Data Theory and Techniques.<br>
-    </p>
-    <p>
-        For more information about my work, please visit my <a href="research.html">research page</a>.
-    </p>
-    </section>
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Andre (Jianyou) Wang</a>
+    <ul>
+      <li><a href="index.html" aria-current="page">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="education.html">Education &amp; Experience</a></li>
+      <li><a href="assets/Jianyou_Wang_CV.pdf">CV</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <section class="news">
-        {% include news-list.html %}
-    </section>
+<main class="wrap">
+
+  <section class="profile">
+    <!-- To add a photo, save it as assets/photo.jpg. Until then, initials are shown. -->
+    <img class="avatar" src="assets/photo.jpg" alt="Photo of Andre Wang"
+         onerror="this.outerHTML='<div class=&quot;avatar avatar-fallback&quot; aria-hidden=&quot;true&quot;>AW</div>'">
+    <div>
+      <h1>Andre (Jianyou) Wang</h1>
+      <p class="role">Ph.D. Candidate, Computer Science &amp; Engineering<br>University of California, San Diego</p>
+      <div class="links">
+        <a href="mailto:jiw101@ucsd.edu">jiw101@ucsd.edu</a>
+        <a href="https://scholar.google.com/citations?user=4nysj5kAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="assets/Jianyou_Wang_CV.pdf">CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <h2>About</h2>
+  <p>
+    I am a Ph.D. candidate in Computer Science and Engineering at UC San Diego, advised by
+    Leon Bergen and Ramamohan Paturi (expected graduation October 2026). I work on
+    <strong>LLM reasoning and post-training</strong>, with a focus on getting models to make
+    calibrated predictions about the real world: forecasting clinical-trial outcomes, reasoning
+    counterfactually, and improving their own skills through reinforcement learning.
+  </p>
+  <p>
+    Along the way I have built retrieval and long-context systems, benchmarks, and statistically
+    validated LLM-as-annotator pipelines, many of them for biomedical science. I also collaborate
+    with the ScienceDirect &amp; Scopus AI teams at Elsevier. Before UCSD, I studied mathematics,
+    computer science, and statistics at Duke University, working with Cynthia Rudin and Vahid Tarokh.
+  </p>
+
+  <h2>Research Summary</h2>
+  <div class="themes">
+    <div class="theme">
+      <h3>Real-world forecasting &amp; counterfactual reasoning</h3>
+      <p>Predicting clinical-trial outcomes via stepwise counterfactual "imagination," and a live,
+         contamination-resistant benchmark to measure it. <a href="research.html#forecasting">DeepImagine, CT Open →</a></p>
+    </div>
+    <div class="theme">
+      <h3>RL post-training &amp; self-improving curricula</h3>
+      <p>Self-evolving curricula that teach a model a new skill with no ground-truth reasoning traces,
+         breaking through apparent GRPO plateaus. <a href="research.html#rl">Question-begets-Question →</a></p>
+    </div>
+    <div class="theme">
+      <h3>Long-context modeling &amp; retrieval</h3>
+      <p>Linear-time Mamba document scanners that beat 7B embedding models, plus synthetic-data methods
+         for instruction-following retrieval. <a href="research.html#long-context">Single-Pass Scanning, IR2, BIRCO →</a></p>
+    </div>
+    <div class="theme">
+      <h3>Trustworthy evaluation at scale</h3>
+      <p>LLM annotation pipelines validated against expert panels, and benchmarks for evidence extraction and
+         risk-of-bias assessment. <a href="research.html#evaluation">DORIS-MAE, RoBBR, EvidenceBench →</a></p>
+    </div>
+  </div>
+
+  <h2>Current Research Interests</h2>
+  <ul>
+    <li><strong>Reinforcement fine-tuning for reasoning.</strong> Curricula, synthetic data, and training signals that let models keep improving when labeled reasoning traces aren't available.</li>
+    <li><strong>Forecasting and counterfactual reasoning.</strong> Teaching LLMs to make calibrated, prospective predictions about real-world events, evaluated without data contamination.</li>
+    <li><strong>AI for Science and DeepResearch agents.</strong> Building a temporal knowledge graph of 40M biomedical papers and training agents that learn how results and ideas turn into hypotheses, so they can anticipate future discoveries.</li>
+    <li><strong>Long-context modeling and RAG.</strong> Efficient architectures that read very long inputs in a single pass.</li>
+    <li><strong>Trustworthy large-scale evaluation.</strong> Benchmarks and LLM-as-judge pipelines with statistical guarantees.</li>
+  </ul>
+
+  <h2>Highlights</h2>
+  <ul class="news">
+    <li><span class="when">2026</span><span><em>CT Open</em> accepted to COLM 2026; the live prediction challenge is hosted at <a href="https://ct-open.net/">ct-open.net</a>.</span></li>
+    <li><span class="when">2026</span><span>New preprints: <a href="https://arxiv.org/abs/2604.23054"><em>DeepImagine</em></a> and <a href="https://arxiv.org/abs/2608.01522"><em>Question Begets Question</em></a>.</span></li>
+    <li><span class="when">2025</span><span><em>Single-Pass Document Scanning</em> selected as an <strong>Oral Spotlight (top 2%)</strong> at COLM 2025.</span></li>
+    <li><span class="when">2025</span><span><em>EvidenceBench</em> at COLM 2025 and <em>RoBBR</em> at EMNLP 2025.</span></li>
+  </ul>
+
 </main>
+
+<footer>
+  <div class="wrap">© 2026 Andre (Jianyou) Wang</div>
+</footer>
+
+</body>
+</html>

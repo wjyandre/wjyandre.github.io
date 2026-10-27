@@ -1,20 +1,125 @@
----
-layout: default
-title: Hello world - Research
-description: Research work and publications by Hello world
----
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research · Andre (Jianyou) Wang</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
 
-<main>
-  <section class="research-intro blurb">
-    <p>
-      
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Andre (Jianyou) Wang</a>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html" aria-current="page">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="education.html">Education &amp; Experience</a></li>
+      <li><a href="assets/Jianyou_Wang_CV.pdf">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <h1>Selected Research</h1>
+  <p class="muted">Main research threads, with the key results from each. Full paper list on the <a href="publications.html">Publications</a> page.</p>
+
+  <section class="project" id="forecasting">
+    <h2>Real-World Forecasting &amp; Counterfactual Post-Training</h2>
+    <p class="papers">
+      <a href="https://arxiv.org/abs/2604.23054">DeepImagine</a> ·
+      <a href="https://arxiv.org/abs/2604.16742">CT Open</a> (COLM 2026)
     </p>
-    
+    <ul class="stats">
+      <li>Matches GPT-5 with Gemma-3-12B</li>
+      <li>Live, contamination-resistant benchmark</li>
+    </ul>
+    <ul>
+      <li><strong>DeepImagine</strong> reframes clinical-trial outcome forecasting as stepwise counterfactual
+        imagination. It models an intractable joint prediction as a Markov chain of single-factor perturbations
+        and trains specialized Gemma-3-12B operators on natural and synthetic counterfactuals via SFT, RFT, and GRPO.
+        Under a calibration assumption, multi-anchor aggregation provably converges to the true conditional,
+        and we observe the predicted variance-reduction signature empirically. The model matches GPT-5 and outperforms
+        RAG and traditional baselines.</li>
+      <li><strong>CT Open</strong> is the first live, contamination-resistant benchmark for prospective clinical-trial
+        forecasting. An agentic pipeline (search, scraping, multi-round verification) collects trials with
+        time-stamped cutoffs, validated by external-database checks and a physician-scientist audit. The
+        prediction challenge is hosted at <a href="https://ct-open.net/">ct-open.net</a>.</li>
+    </ul>
   </section>
 
-  <section class="publications">
-    <div class="publications-container">
-      {% include publications-list.html %}
-    </div>
+  <section class="project" id="rl">
+    <h2>Reinforcement Learning &amp; Self-Improving Curricula</h2>
+    <p class="papers"><a href="https://arxiv.org/abs/2608.01522">Question Begets Question</a></p>
+    <ul class="stats">
+      <li>5.6% → 16.5% pass@1</li>
+      <li>No saturation after 20 rounds</li>
+    </ul>
+    <ul>
+      <li>A self-evolving RL curriculum that teaches a model a skill it hasn't mastered, with <em>no</em>
+        ground-truth reasoning traces: each round the model self-evaluates, synthesizes new problems, and
+        fine-tunes with GRPO.</li>
+      <li>Under fixed data and compute, this breaks through an apparent RL plateau. The mechanism: seeding only
+        from "mostly-solved" problems works, while harder or mixed seeds stay at baseline. Boundary-level seeds
+        keep GRPO groups in a high-variance regime, whereas too-hard seeds zero out the group-normalized advantage.
+        Gains transfer to unseen hard problems.</li>
+    </ul>
   </section>
+
+  <section class="project" id="long-context">
+    <h2>Retrieval-Augmented Generation &amp; Long-Context Modeling</h2>
+    <p class="papers">
+      <a href="https://arxiv.org/abs/2504.03101">Single-Pass Document Scanning</a> (COLM 2025, Oral Spotlight) ·
+      <a href="https://aclanthology.org/2024.lrec-main.810.pdf">IR2</a> (LREC-COLING 2024, Oral) ·
+      <a href="https://www.semanticscholar.org/paper/BIRCO%3A-A-Benchmark-of-Information-Retrieval-Tasks-Wang-Wang/991c2164c85a80034afeeeee88b3208da766e76f">BIRCO</a>
+    </p>
+    <ul class="stats">
+      <li>130M model beats 7B embedders</li>
+      <li>~70× fewer TFLOPs</li>
+      <li>Generalizes past 256K tokens</li>
+    </ul>
+    <ul>
+      <li><strong>Single-Pass Document Scanning</strong> frames long-document QA as RAG, where a cheap scanner
+        retrieves the key sentences for an LLM generator. We turn a pretrained Mamba-2 into a single-pass scanner
+        by replacing the LM head with a binary classification head that scores every sentence in one linear-time
+        pass. This discriminative design beats generative fine-tuning of the same backbone by +26.5 points
+        (33.5 → 60.0). Trained on 1M carefully designed synthetic examples, a 130M scanner beats 7B embedding models
+        (NV-Embed-v2, GritLM).</li>
+      <li><strong>IR2</strong> is a synthetic query-generation method with controllable complexity that beats
+        Promptagator across four contrastively fine-tuned architectures (E5-v2, SimCSE, RoBERTa, SPECTER-v2).</li>
+      <li><strong>BIRCO</strong> is the first instruction-following information retrieval benchmark for complex user queries.</li>
+    </ul>
+  </section>
+
+  <section class="project" id="evaluation">
+    <h2>Trustworthy Evaluation at Scale</h2>
+    <p class="papers">
+      <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/78f9c04bdcb06f1ada3902912d8b64ba-Abstract-Datasets_and_Benchmarks.html">DORIS-MAE</a> (NeurIPS 2023) ·
+      <a href="https://arxiv.org/abs/2411.18831">RoBBR</a> (EMNLP 2025) ·
+      <a href="https://arxiv.org/abs/2504.18736">EvidenceBench</a> (COLM 2025)
+    </p>
+    <ul class="stats">
+      <li>165,000+ annotations in ~24 hours</li>
+      <li>500× faster, 1,000× cheaper</li>
+    </ul>
+    <ul>
+      <li><strong>DORIS-MAE</strong> uses statistically validated LLM-as-expert-annotator pipelines (pre-specified
+        hypothesis tests, hierarchical bootstrap) that match expert panels of PhDs and MDs. It annotated
+        165,000+ document–aspect pairs in about 24 hours for under $150 with no loss in quality.</li>
+      <li><strong>RoBBR</strong> splits risk-of-bias assessment into separate retrieval and reasoning subtasks. A
+        two-stage ablation that swaps each component independently shows retrieval is the bottleneck, and that
+        GPT-4o and Claude 3.5 Sonnet have distinct strengths (retrieval vs. reasoning).</li>
+      <li><strong>EvidenceBench</strong> is a benchmark for extracting evidence from biomedical papers.</li>
+    </ul>
+  </section>
+
 </main>
+
+<footer>
+  <div class="wrap">© 2026 Andre (Jianyou) Wang</div>
+</footer>
+
+</body>
+</html>
